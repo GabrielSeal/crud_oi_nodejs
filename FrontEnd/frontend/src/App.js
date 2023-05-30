@@ -20,14 +20,34 @@ import api from './Services/Api.js'
   const [allNotes, setAllNotes] = useState([]);
 
   useEffect(()=> {
-    async function getAllNotes() {
-      const response = await api.get('/annotations', )
-      setAllNotes(response.data);
-
-    }
     getAllNotes()
   }, [])
 
+  async function getAllNotes() {
+    const response = await api.get('/annotations', )
+    setAllNotes(response.data);
+
+  }
+
+ async function handleDelete(id) 
+  {
+    const deletedNote = await api.delete(`/annotations/${id}`);
+    
+    if(deletedNote)
+      {
+        setAllNotes(allNotes.filter(note => note._id != id)); // verifica os ids cadastrados e se for diferente do id passado para 
+        //exclusão, será mantido, caso contrário será removido 
+      }
+  }
+
+  async function handleChangePriority(id)
+  {
+    const note = await api.put(`/priorities/${id}`);
+    if(note)
+    {
+      getAllNotes();
+    }
+  }
 
   async function handleSubmit(e)
   {
@@ -85,7 +105,11 @@ import api from './Services/Api.js'
       <main>
         <ul>
           {allNotes.map(data => (
-          <Notes data={data}/>
+          <Notes
+           data={data}
+           handleDelete = {handleDelete}
+           handleChangePriority={handleChangePriority}
+          />
         ))}
         </ul>
       </main>
