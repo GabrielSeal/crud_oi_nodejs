@@ -7,6 +7,7 @@ import './App.css'
 import './Main.css'
 import Notes from './Components/Notes/index.js';
 import api from './Services/Api.js'
+
 //import RadioButton from './Components/Notes/RadioButton';
 
 // componente: estrutura de dado que retorna algo 
@@ -76,44 +77,48 @@ import api from './Services/Api.js'
   
 
   return (
-    <div id = "app">
-      <aside>
-        <strong>Caderno de Notas</strong>
-        <form onSubmit={handleSubmit}> 
-          <div className="input-block">
-            <label htmlFor="title">Título da anotação</label>
-            <input 
-            required
-            value={title}
-            onChange={e => setTitles(e.target.value)}
 
-            />
-          </div>  
+    <>
+      <header className="header">
+        <img className="img" src="/logoOI.png" alt="logo oi" />
+      </header>
 
-          <div className="input-block">
-            <label htmlFor="nota">Anotações</label>
-            <textarea
-            required
-            value={notes}
-            onChange={e => setNotes(e.target.value)}
-            />
-          </div>
-          <button id='btn_submit' type="submit">Salvar</button>
-        </form>
-       
-      </aside>
-      <main>
-        <ul>
-          {allNotes.map(data => (
-          <Notes
-           data={data}
-           handleDelete = {handleDelete}
-           handleChangePriority={handleChangePriority}
-          />
-        ))}
-        </ul>
-      </main>
-    </div>
+    <div id="app">
+        <aside>
+          <strong>Caderno de Notas</strong>
+          <form onSubmit={handleSubmit}>
+            <div className="input-block">
+              <label htmlFor="title">Título da anotação</label>
+              <input
+                required
+                value={title}
+                onChange={e => setTitles(e.target.value)} />
+            </div>
+
+            <div className="input-block">
+              <label htmlFor="nota">Anotações</label>
+              <textarea
+                required
+                value={notes}
+                onChange={e => setNotes(e.target.value)} />
+            </div>
+            <button id='btn_submit' type="submit">Salvar</button>
+          </form>
+
+        </aside>
+        <main>
+          <ul>
+            {allNotes.map(data => (
+              <Notes
+                data={data}
+                handleDelete={handleDelete}
+                handleChangePriority={handleChangePriority} />
+            ))}
+          </ul>
+        </main>
+      </div>
+      
+      </>
   );
 }
 

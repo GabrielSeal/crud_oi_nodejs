@@ -21,3 +21,16 @@ body{
 body, input, button, textarea{
     font-family: Roboto, sans-serif;
 }
+
+
+.header{
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 2px 0 #115208;
+
+}
+
+.img{
+    width: 13rem;
+    height: auto;
+}

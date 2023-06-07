@@ -8,27 +8,31 @@ li.notepad-infos  div{
 
 li.notepad-infos {
     background: #fff;
-    box-shadow: 0 0 14px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 0 14px 0 rgba(21, 255, 0, 0.356);
     border-radius: 10px;
     padding: 20px 20px 10px 20px;
+    transition: 0.4s;
+    border: 1px solid rgb(179, 179, 179);
 }
 
 li.notepad-infos strong {
 display: block;
 font-size: 16px;
-color: #333;
+color: #000000;
 
 
 }
 
 li.notepad-infos div div {
-    color: #ffeae6;
+    color: #e40909;
     cursor: pointer;
+    transition: 0.3s;
+
 }
 
 li.notepad-infos div div:hover {
-    color: #eb8f7a;
-    transition: 0.2s;
+    color: #a50000;
+    transition: 0.4s;
 }
 
 li.notepad-infos textarea {
@@ -42,19 +46,23 @@ li.notepad-infos textarea {
     border: 0;
     background: #fff;
     resize: none;
+    transition: 0.4s;
+
 }
 
 li.notepad-infos textarea:hover{
-    cursor:default
+    cursor:default;
 }
+
 li.notepad-infos span {
-    color: #c4c4c4;
+    color: #adadad;
     cursor: pointer;
 
 }
 
 li.notepad-infos span:hover {
-    color: #eb8f7a;
+    color: #12d101;
     transition: 0.2s;
+    transition: 0.3s;
 
 }
