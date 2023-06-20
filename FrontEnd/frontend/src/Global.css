@@ -12,7 +12,7 @@ html,body,#root{
 }
 
 body{
-    background: #e4e7ef;
+    background: #1b1b1b;
     -webkit-font-smoothing: antialiased;
 
 }
@@ -26,7 +26,7 @@ body, input, button, textarea{
 .header{
     display: flex;
     justify-content: center;
-    box-shadow: 0 0 2px 0 #115208;
+    box-shadow: 0 0 5px 0 #115208;
 
 }
 

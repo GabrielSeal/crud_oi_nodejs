@@ -1,20 +1,16 @@
 
-import React, { useState, useEffect } from 'react';
+
+import React, { useState, useEffect, useRef } from 'react';
 import Header from './Header';
 import './Global.css'
 import './Sidebar.css'
 import './App.css'
 import './Main.css'
 import Notes from './Components/Notes/index.js';
-import api from './Services/Api.js'
-
-//import RadioButton from './Components/Notes/RadioButton';
-
-// componente: estrutura de dado que retorna algo 
+import api from './Services/Api.js';
 
 
   function App() {
-  
   
   const [title, setTitles] = useState('');
   const [notes, setNotes] = useState('');
@@ -67,9 +63,9 @@ import api from './Services/Api.js'
     useEffect(() => {
       function enableSubmitButton() {
        let btn = document.getElementById('btn_submit')
-       btn.style.background = '#FFD3CA'
+       btn.style.background = '#115508'
         if(title && notes) {
-          btn.style.background = '#EB8F7A'
+          btn.style.background = '#175a03'
        }
       }
       enableSubmitButton()
@@ -89,10 +85,18 @@ import api from './Services/Api.js'
           <form onSubmit={handleSubmit}>
             <div className="input-block">
               <label htmlFor="title">Título da anotação</label>
-              <input
+              
+              <div className='buttons'>
+                <button className="button-post">POST</button>
+                <button className="button-get">GET</button>
+                <button className="button-delete">DELETE</button>
+                <button className="button-put">PUT</button>
+              </div>
+              
+              {/* <input
                 required
                 value={title}
-                onChange={e => setTitles(e.target.value)} />
+                onChange={e => setTitles(e.target.value)} /> */}
             </div>
 
             <div className="input-block">
