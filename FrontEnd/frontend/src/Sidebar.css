@@ -79,6 +79,9 @@ aside form button[type=submit] {
 }
 
 .button-post{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 0.3rem;
     width: 5rem;
     height: 1.4rem;
@@ -95,7 +98,16 @@ aside form button[type=submit] {
     cursor: pointer;
 }
 
+.button-post:focus{
+    transition: 0.4s;
+    background-color: #eeff0054;
+    cursor: pointer;
+}
+
 .button-get{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 0.3rem;
     width: 5rem;
     height: 1.4rem;
@@ -112,7 +124,16 @@ aside form button[type=submit] {
     cursor: pointer;
 }
 
+.button-get:focus{
+    transition: 0.4s;
+    background-color: #00ff376e;
+    cursor: pointer;
+}
+
 .button-delete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 0.3rem;
     width: 5.5rem;
     height: 1.4rem;
@@ -128,7 +149,17 @@ aside form button[type=submit] {
     background-color: #ff000073;
     cursor: pointer;
 }
+
+.button-delete:focus{
+    transition: 0.4s;
+    background-color: #ff000073;
+    cursor: pointer;
+}
+
 .button-put{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 0.3rem;
     width: 5rem;
     height: 1.4rem;
@@ -145,7 +176,14 @@ aside form button[type=submit] {
     cursor: pointer;
 }
 
+.button-put:focus{
+    transition: 0.4s;
+    background-color: #ff5e0079;
+    cursor: pointer;
+}
+
 .buttons{
+    margin-top: 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
