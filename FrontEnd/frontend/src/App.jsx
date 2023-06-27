@@ -19,10 +19,10 @@ function App() {
   async function getAllNotes() {
     const response = await api.get("/annotations");
     setAllNotes(response.data);
-  }
+  } // não precisa mexer, função básica de get de todas as annotations presentes no banco
 
-  async function handleDelete(id) {
-    const deletedNote = await api.delete(`/annotations/${id}`);
+  async function handleDelete(id) { // função de exclusão da nota do banco de dados, método delete
+    const deletedNote = await api.delete(`/annotations/${id}`); // vai buscar o ID cadastrado junto a action para verificar no banco
 
     if (deletedNote) {
       setAllNotes(allNotes.filter((note) => note._id != id)); // verifica os ids cadastrados e se for diferente do id passado para
@@ -30,14 +30,15 @@ function App() {
     }
   }
 
-  async function handleChangePriority(id) {
+  /*async function handleChangePriority(id) {
     const note = await api.put(`/priorities/${id}`);
     if (note) {
       getAllNotes();
     }
-  }
+  }*/ // mudança de prioridade nao é mais necessária
 
-  async function handleSubmit(e) {
+  async function handleSubmit(e) { // submissão da action
+                                   // verificar quais campos são obrigatórios ou não para o cadastramento efetivo da action 
     e.preventDefault();
 
     const response = await api.post("/annotations", {
@@ -69,11 +70,10 @@ function App() {
 
       <div id="app">
         <aside>
-          <strong>Caderno de Notas</strong>
+          <strong>Cadastro de actions</strong>
           <form onSubmit={handleSubmit}>
-            
             <div className="input-block">
-              <label htmlFor="nota">Anotações</label>
+              <label htmlFor="nota">Action</label>
               <textarea
                 required
                 value={notes}
@@ -85,7 +85,9 @@ function App() {
               <label htmlFor="title">Escolha o metodo de envio!</label>
 
               <div className="buttons">
-                <button  className="button-post">
+                <button  onClick={e =>handleSave(e.target,data.notes)}
+                className="button-post">
+                  
                   POST
                 </button>
                 <button  className="button-get">

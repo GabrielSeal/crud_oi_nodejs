@@ -51,17 +51,20 @@ function Notes({data, handleDelete, handleChangePriority})
                 size="20"
                 onClick={() => handleDelete(data._id)}
                 />
+                <div>
+                  
+                </div>
               </div>
             </div>
             <textarea 
             defaultValue={data.notes}
             onClick={e => handleEdit(e.target, data.priority)}
-            onChange={e => setChangedNote(e.target.value)}  // pega o evento de mudança, valor da target área
+            //onChange={e => setChangedNote(e.target.value)}  // pega o evento de mudança, valor da target área
             onBlur={e => handleSave(e.target, data.notes)}
             />            
             <span><AiOutlineExclamationCircle 
-            size="20"
-            onClick={() => handleChangePriority(data._id)}
+           // size="20"
+            //onClick={() => handleChangePriority(data._id)}
             /></span>
           </li>
         </>
