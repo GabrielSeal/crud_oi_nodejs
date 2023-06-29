@@ -73,6 +73,9 @@ function App() {
           <strong>Cadastro de actions</strong>
           <form onSubmit={handleSubmit}>
             <div className="input-block">
+              <label htmlFor="nameAction">Nome da Action!</label>
+              <input type="text" id="buscaDeCampo" className="campo"/>
+
               <label htmlFor="nota">Action</label>
               <textarea
                 required
@@ -85,8 +88,10 @@ function App() {
               <label htmlFor="title">Escolha o metodo de envio!</label>
 
               <div className="buttons">
-                <button  onClick={e =>handleSave(e.target,data.notes)}
-                className="button-post">
+                <button  
+                // onClick={e =>handleSave(e.target,data.notes)}
+                className="button-post"
+                >
                   
                   POST
                 </button>
@@ -113,7 +118,7 @@ function App() {
               <Notes
                 data={data}
                 handleDelete={handleDelete}
-                handleChangePriority={handleChangePriority}
+                // handleChangePriority={handleChangePriority}
               />
             ))}
           </ul>

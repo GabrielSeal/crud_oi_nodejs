@@ -189,3 +189,7 @@ aside form button[type=submit] {
     align-items: center;
     gap: 1rem;
 }
+
+.campo{
+    margin-bottom: 1rem;
+}
