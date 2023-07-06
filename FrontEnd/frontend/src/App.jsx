@@ -93,7 +93,7 @@ function App() {
                 className="button-post"
                 >
                   
-                  POST
+                  POST DE CADASTRO
                 </button>
                 <button  className="button-get">
                   GET
@@ -102,7 +102,7 @@ function App() {
                   DELETE
                 </button>
                 <button  className="button-put">
-                  PUT
+                  POST DE MENSAGEM
                 </button>
               </div>
             </div>
